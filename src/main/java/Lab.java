@@ -1,4 +1,5 @@
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -26,9 +27,9 @@ public class Lab {
      * so here Integer is a wrapper for int.
      */
     public Map<Integer, String> createMap(){
-        return null;
+        HashMap<Integer, String> hashMapName= new HashMap<Integer, String>(); 
+        return hashMapName;
     }
-
     /**
      * Get the size of a map. (number of key/value paris)
      * @param map a map to be manipulated.
@@ -36,7 +37,8 @@ public class Lab {
      */
     public int getSize(Map<Integer,String> map){
 //        return total number of key/value pairs in the map
-        return 0;
+          int total =  map.size();
+          return total;
     }
 
     /**
@@ -47,8 +49,8 @@ public class Lab {
      * @return nothing, pass by reference will cause changes to the list object to be reflected across the program.
      */
     public void addKeyValuePair(Map<Integer,String> map, int key, String value){
+        map.put(key, value);
     }
-
     /**
      * Get a value from a map given a key.
      * @param map a map to be manipulated.
@@ -56,9 +58,9 @@ public class Lab {
      * @return the value associated with key in map.
      */
     public String getValueFromKey(Map<Integer, String> map, int key){
-        return "";
+        String value = map.get(key);
+        return value;
     }
-
     /**
      * Remove a key/value pair from a map.
      * @param map a map to be manipulated.
@@ -66,6 +68,7 @@ public class Lab {
      * @return nothing, pass by reference will cause changes to the list object to be reflected across the program.
      */
     public void removeKeyValuePair(Map<Integer, String> map, int key){
+        map.remove(key);
     }
 
     /**
@@ -76,6 +79,6 @@ public class Lab {
      * @return nothing, pass by reference will cause changes to the list object to be reflected across the program.
      */
     public void overwriteValue(Map<Integer, String> map, int key, String value){
-
+        map.replace(key, value);
     }
 }
